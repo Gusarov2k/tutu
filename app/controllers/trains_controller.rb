@@ -13,6 +13,16 @@ class TrainsController < ApplicationController
 
 	def create
 		@train = Train.new(train_params)
+
+		if @train.save
+			redirect_to @train
+		else
+			render :new
+		end
+	end
+
+	def edit
+		
 	end
 
 
