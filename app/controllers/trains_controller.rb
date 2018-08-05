@@ -6,4 +6,8 @@ class TrainsController < ApplicationController
 	def show
 		@train = Train.find(params[:id])
 	end
+
+	def new
+		@train = Train.new
+	end
 end
