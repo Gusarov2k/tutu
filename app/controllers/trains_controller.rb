@@ -22,6 +22,10 @@ class TrainsController < ApplicationController
 	end
 
 	def edit
+		@train = Train.find(params[:id])
+	end
+
+	def update
 		
 	end
 
