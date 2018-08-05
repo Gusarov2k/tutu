@@ -6,7 +6,6 @@ class TrainsController < ApplicationController
 	end
 
 	def show
-		@train = Train.find(params[:id])
 	end
 
 	def new
@@ -24,12 +23,9 @@ class TrainsController < ApplicationController
 	end
 
 	def edit
-		@train = Train.find(params[:id])
 	end
 
 	def update
-		@train = Train.find(params[:id])
-
 		if @train.update(train_params)
 			redirect_to @train
 		else
@@ -39,12 +35,15 @@ class TrainsController < ApplicationController
 	end
 
 	def destroy
-		@train = Train.find(params[:id])
 		@train.destroy
 		redirect_to trains_path
 	end
 
 	private
+
+	def set_train
+		@train = Train.find(params[:id])
+	end
 
 	def train_params
 		params.require(:train).permit(:number)
