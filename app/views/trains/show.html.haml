@@ -1,0 +1,7 @@
+%p#notice= notice
+%p
+  %strong Номер:
+  = @train.number
+= link_to 'Редактировать', edit_train_path(@train)
+|
+= link_to 'Вернуться Назад', trains_path
