@@ -4,4 +4,14 @@
   = @railway_station.title
 = link_to 'Edit', edit_railway_station_path(@railway_station)
 |
+
+- if @railway_station.routes.empty?
+	%p Станция не входит ни в один маршрут
+- else
+	%p станция входит в следующие маршруты:
+	%ul
+		- @@railway_station.routes.each do |route|
+			%li
+				= route.name
+
 = link_to 'Back', railway_stations_path
