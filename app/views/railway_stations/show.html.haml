@@ -6,12 +6,12 @@
 |
 
 - if @railway_station.routes.empty?
-	%p Станция не входит ни в один маршрут
+  %p Станция не входит ни в один маршрут
 - else
-	%p станция входит в следующие маршруты:
-	%ul
-		- @@railway_station.routes.each do |route|
-			%li
-				= route.name
+  %p станция входит в следующие маршруты:
+  %ul
+  - @railway_station.routes.each do |route|
+    %li
+    = route.name
 
 = link_to 'Back', railway_stations_path
