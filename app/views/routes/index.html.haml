@@ -1,1 +1,12 @@
-%h1 Helloy
+%p#notice= notice
+%h1 Список маршрутов
+%table
+  %thead
+    %tr
+      %th Номер поезда
+      %th{:colspan => "3"}
+  %tbody
+    - @routes.each do |train|
+      = render train
+%br/
+= link_to 'Добавить поезд', new_route_path
