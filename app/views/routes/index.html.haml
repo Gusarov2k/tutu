@@ -6,7 +6,7 @@
       %th Номер поезда
       %th{:colspan => "3"}
   %tbody
-    - @routes.each do |train|
-      = render train
+    - @routes.each do |route|
+      = render route
 %br/
 = link_to 'Добавить маршрут', new_route_path
