@@ -1,0 +1,7 @@
+%p#notice= notice
+%p
+  %strong Номер:
+  = @route.name
+= link_to 'Редактировать', edit_route_path(@route)
+|
+= link_to 'Вернуться Назад', routes_path
