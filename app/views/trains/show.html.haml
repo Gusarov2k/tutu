@@ -4,7 +4,7 @@
   - if @train.current_station.present?
     = @train.current_station.title
   - else
-    %p Нк указано
+    %p Не указано
 = link_to 'Редактировать', edit_train_path(@train)
 |
 = link_to 'Вернуться Назад', trains_path
