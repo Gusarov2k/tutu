@@ -4,8 +4,8 @@
     = f.label :number
     %br/
     = f.text_field :number
-  .field
+  .field2
     = f.label :current_station, "Текущая станция"
-    = f.collection_select :current_station, RailwayStation.all, :id, :title
+    = f.collection_select :current_station_id, RailwayStation.all, :id, :title
   .actions
     = f.submit "#{ @train.new_record? ? 'Создать' : 'Изменить'}"
