@@ -3,4 +3,3 @@ class WelcomeController < ApplicationController
   end
 end
 
-# with 20 min ago
