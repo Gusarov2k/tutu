@@ -4,5 +4,9 @@
     = f.label :name
     %br/
     = f.text_field :name
+  .field2
+    = f.label :current_train, "Выбор поезда"
+    = f.collection_select :current_train_id, Train.all, :id, :number
+  
   .actions
     = f.submit "#{ @route.new_record? ? 'Создать' : 'Изменить'}"
