@@ -1,4 +1,4 @@
 class CreateTicketsUser < ActiveRecord::Base
-	has_many :users
-	has_many :tickets
+	belongs_to :user
+	belongs_to :ticket
 end
