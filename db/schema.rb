@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20180819153315) do
 
   create_table "routes", force: :cascade do |t|
     t.string  "name"
-    t.integer "current_train_id"
+    t.integer "train_id"
   end
 
   create_table "tickets", force: :cascade do |t|
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20180819153315) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "current_station_id"
-    t.integer  "current_route_id"
+    t.integer  "route_id"
   end
 
   create_table "users", force: :cascade do |t|
