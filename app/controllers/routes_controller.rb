@@ -1,5 +1,5 @@
 class RoutesController < ApplicationController
-	# before action
+	# before action dd
 	before_action :set_route, only: [:show, :edit, :update, :destroy]
 
 	def index
