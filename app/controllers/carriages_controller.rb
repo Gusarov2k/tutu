@@ -10,9 +10,17 @@ class CarriagesController < ApplicationController
 	end
 
 	def new
+		@carriage = Carriage.new
 	end
 
 	def create
+		@carriage = Carriage.new(carriage_params)
+
+		if @carriage.save
+			redirect_to @carriage
+		else
+			render :new
+		end
 	end
 
 	def edit
