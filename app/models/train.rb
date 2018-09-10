@@ -6,4 +6,6 @@ class Train < ActiveRecord::Base
 
 	has_many 		:tickets
 	has_one			:route
+
+	belongs_to 	:carriage
 end
