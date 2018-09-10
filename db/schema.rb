@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180909180745) do
+ActiveRecord::Schema.define(version: 20180910031802) do
+
+  create_table "carriages", force: :cascade do |t|
+    t.boolean "type_carriage",   default: false
+    t.integer "quant_up_seat"
+    t.integer "quant_down_seat"
+  end
 
   create_table "railway_stations", force: :cascade do |t|
     t.string   "title"
