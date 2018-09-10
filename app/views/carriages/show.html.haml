@@ -1,0 +1,7 @@
+%p#notice= notice
+%p
+  %strong Номер:
+  = @carriage.type_carriage
+= link_to 'Редактировать', edit_carriage_path(@carriage)
+|
+= link_to 'Вернуться Назад', carriages_path
