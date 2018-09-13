@@ -11,6 +11,12 @@ class CarriagesController < ApplicationController
 
 	def new
 		@carriage = Carriage.new
+		# dor create new form in form_for neded add this code
+		# http://railscasts.com/episodes/196-nested-model-form-part-1?autoplay=true
+		1.times do
+			train = @carriage.trains.build
+		end
+
 	end
 
 	def create
@@ -39,6 +45,6 @@ class CarriagesController < ApplicationController
 	end
 
 	def carriage_params
-		params.require(:carriage).permit(:type_carriage, :quant_up_seat, :quant_down_seat)
+		params.require(:carriage).permit(:type_carriage, :quant_up_seat, :quant_down_seat, :number, :carriage_id)
 	end
 end

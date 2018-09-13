@@ -1,4 +1,4 @@
-= form_for(@carriage) do |f|
+= form_for @carriage do |f|
   / = render 'common/errors', resource: @carriege
   .field
     = f.label(:type_carriage, "Плацкарт")
@@ -10,10 +10,12 @@
 
     = f.label :quant_down_seat
     = f.text_field :quant_down_seat
+    = f.fields_for :trains do |builder|
+      .fieldTrain
+      = builder.label :number, "Train"
+      = builder.text_field :number
+    
 
-
-    / = f.label :current_train, "Выбор поезда"
-    / = f.collection_select :train_id, Train.all, :id, :number
   .actions
     = f.submit "#{ @carriage.new_record? ? 'Создать' : 'Изменить'}"
   
