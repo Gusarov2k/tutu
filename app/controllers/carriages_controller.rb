@@ -19,7 +19,7 @@ class CarriagesController < ApplicationController
 
 	def create
 		@carriage = Carriage.new(carriage_params)
-
+		
 		if @carriage.save
 			redirect_to @carriage
 		else

@@ -8,4 +8,12 @@ class Route < ActiveRecord::Base
 	# change
 
 	has_many :tickets
+
+	before_create :set_name
+
+private
+
+	def set_name
+		self.name = "#{railway_stations.first.title} - #{railway_stations.last.title}"
+	end
 end
