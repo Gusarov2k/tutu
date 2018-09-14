@@ -9,7 +9,7 @@ class Route < ActiveRecord::Base
 
 	has_many :tickets
 
-	before_create :set_name
+	before_validation :set_name
 
 private
 
