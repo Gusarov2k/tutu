@@ -3,6 +3,7 @@ class RailwayStationsRoute < ActiveRecord::Base
 	belongs_to :route
 
 	# add validation on uniqueness row
-	validates :railway_station_id, uniqueness: true
+	# add scope is validate only selected column
+	validates :railway_station_id, uniqueness: { scope: :route_id }
 
 end
