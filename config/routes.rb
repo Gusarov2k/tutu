@@ -4,7 +4,13 @@ Rails.application.routes.draw do
   resources :tickets
   resources :routes
   resources :trains
-  resources :railway_stations
+  resources :railway_stations do
+    # Создание кастомного экшена для выбранного ресурса
+    # Первый идет HTTP метод для обращения к указанному экшену (GET, POST ...)
+    # Затем название экшена :update_position
+    # Затем после , указывается к чему должен применен этот экшен. Ко всей коллекции (on: :collection) или on: :member
+    patch :update_position, on: :member
+  end
   resources :carriages
   root 'welcome#index'
 
